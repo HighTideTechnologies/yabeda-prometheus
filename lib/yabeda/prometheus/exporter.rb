@@ -29,7 +29,7 @@ module Yabeda
                 AccessLog: [],
               )
             rescue => IOError
-              pp "IOError: ", IOError
+              pp "#start_metrics_server! IOError: ", IOError
             end
           end
         end
