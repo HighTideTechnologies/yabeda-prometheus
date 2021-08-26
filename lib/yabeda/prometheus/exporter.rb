@@ -29,7 +29,6 @@ module Yabeda
                 AccessLog: [],
               )
             rescue StandardError =>  error
-              debugger
               pp "#start_metrics_server! StandardError: ", error
             end
           end
