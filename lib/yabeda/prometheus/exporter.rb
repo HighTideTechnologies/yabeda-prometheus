@@ -28,7 +28,7 @@ module Yabeda
                 Port: ENV.fetch("PROMETHEUS_EXPORTER_PORT", default_port),
                 AccessLog: [],
               )
-            rescue StandardError::IOError =>  error
+            rescue StandardError =>  error
               pp "#start_metrics_server! StandardError: ", error
             end
           end
