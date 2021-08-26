@@ -21,6 +21,7 @@ module Yabeda
         def start_metrics_server!
           Thread.new do
             begin
+              pp "BEGIN RESCUE"
               default_port = ENV.fetch("PORT", 9394)
               ::Rack::Handler::WEBrick.run(
                 rack_app,
@@ -30,6 +31,7 @@ module Yabeda
               )
             rescue StandardError =>  error
               pp "#start_metrics_server! StandardError: ", error
+              pp "END RESCUE"
             end
           end
         end
