@@ -35,6 +35,7 @@ module Yabeda
         end
 
         def rack_app(exporter = self, path: "/metrics")
+          pp 'inside #rack_app'
           ::Rack::Builder.new do
             use ::Rack::CommonLogger
             use ::Rack::ShowExceptions
