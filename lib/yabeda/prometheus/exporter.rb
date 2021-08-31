@@ -39,7 +39,7 @@ module Yabeda
           pp 'inside #rack_app'
           ::Rack::Builder.new do
             use ::Rack::CommonLogger
-            pp 'after CommonLogger'
+            pp 'CommonLogger', ::Rack::CommonLogger
             
             use ::Rack::ShowExceptions
             pp 'after ShowExceptions'
