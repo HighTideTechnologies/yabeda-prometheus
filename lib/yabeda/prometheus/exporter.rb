@@ -29,29 +29,21 @@ module Yabeda
                 AccessLog: [],
               )
             rescue StandardError =>  error
-              pp "#start_metrics_server! StandardError: ", error
+              pp "RESCUE IN #start_metrics_server! ~ StandardError: ", error
             end
           end
         end
 
         def rack_app(exporter = self, path: "/metrics")
           begin
-          pp 'inside #rack_app'
           ::Rack::Builder.new do
             use ::Rack::CommonLogger
-            pp 'CommonLogger', ::Rack::CommonLogger
-            
             use ::Rack::ShowExceptions
-            pp 'after ShowExceptions'
-            
             use exporter, path: path
-            pp 'after exporter'
-            
             run NOT_FOUND_HANDLER
-            pp 'after run'
           end
           rescue StandardError =>  error
-            pp "#rack_app StandardError: ", error
+            pp "RESCUE IN #rack_app ~ StandardError: ", error
           end
         end
       end
