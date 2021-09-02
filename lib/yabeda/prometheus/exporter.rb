@@ -22,6 +22,7 @@ module Yabeda
           Thread.new do
             begin
               default_port = ENV.fetch("PORT", 9394)
+              pp 'before #start_metrics_server! #run'
               ::Rack::Handler::WEBrick.run(
                 rack_app,
                 Host: ENV["PROMETHEUS_EXPORTER_BIND"] || "0.0.0.0",
