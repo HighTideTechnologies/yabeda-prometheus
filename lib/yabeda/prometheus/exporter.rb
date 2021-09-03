@@ -19,6 +19,7 @@ module Yabeda
         end
 
         def start_metrics_server!
+          pp 'before Thread #start_metrics_server!'
           Thread.new do
             begin
               default_port = ENV.fetch("PORT", 9394)
