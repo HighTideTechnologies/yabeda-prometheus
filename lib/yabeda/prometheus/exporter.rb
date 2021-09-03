@@ -48,6 +48,7 @@ module Yabeda
           rescue StandardError =>  error
             pp "RESCUE IN #rack_app ~ StandardError: ", error
           end
+          pp 'bottom of #rack_app'
         end
       end
 
