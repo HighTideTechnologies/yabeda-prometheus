@@ -35,7 +35,8 @@ module Yabeda
               pp "RESCUE IN #start_metrics_server! ~ StandardError: ", error
             end
           end
-          'yabeda server has started...'
+
+          return 'yabeda server has started...'
         end
 
         def rack_app(exporter = self, path: "/metrics")
@@ -49,7 +50,7 @@ module Yabeda
           rescue StandardError =>  error
             pp "RESCUE IN #rack_app ~ StandardError: ", error
           end
-          pp 'bottom of #rack_app'
+          # pp 'bottom of #rack_app'
         end
       end
 
